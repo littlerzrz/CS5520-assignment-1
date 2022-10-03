@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput, Alert } from "react-native";
 import React, { useState } from "react";
-import { Card, Buttons } from "../components";
+import { Card, ButtonSet } from "../components";
 import { colors } from "../my_assets/constants";
 import { Header } from "../components";
 
@@ -36,7 +36,7 @@ export default function StartScreen({
           />
         </View>
         <View style={{ flex: 1, marginTop: 35 }}>
-          <Buttons
+          <ButtonSet
             confirmHandler={confirmHandler}
             resetHandler={resetHandler}
           />

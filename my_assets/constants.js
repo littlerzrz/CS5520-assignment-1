@@ -6,6 +6,14 @@ const colors = {
   darkRed: "#EB5F5F",
   white: "#fff",
 };
+
+const gradients = {
+  start: { colors: [colors.white, colors.darkBlue], locations: [0.1, 0.9] },
+  game: { colors: [colors.gold, colors.lightBlue], locations: [0.2, 1] },
+  final: { colors: [colors.white, colors.darkGreen], locations: [0.1, 1] },
+};
+
+
 const MY_NUMBER = 1025;
 
-export { colors, MY_NUMBER };
+export { colors, MY_NUMBER, gradients };

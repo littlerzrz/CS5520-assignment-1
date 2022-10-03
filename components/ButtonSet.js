@@ -1,7 +1,8 @@
 import { View, Button } from "react-native";
 import React from "react";
 import { colors } from "../my_assets/constants";
-export default function Buttons(props) {
+
+export default function ButtonSet(props) {
   const { confirmHandler, resetHandler, marginTop, flexDirection } = props;
   const { confirmTitle, resetTitle } = props;
 
