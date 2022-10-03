@@ -1,10 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import { colors } from "../my_assets/constants";
 
-export default function Header() {
+export default function Header({ isGameOver }) {
   return (
     <View style={styles.titleBox}>
-      <Text style={styles.title}> Guess My Number </Text>
+      <Text style={styles.title}>
+        {isGameOver ? "Game is over" : "Guess My Number"}
+      </Text>
     </View>
   );
 }
@@ -17,12 +20,12 @@ const styles = StyleSheet.create({
     height: 70,
     flexDirection: "column",
     justifyContent: "center",
-    borderColor: "#B1A172",
+    borderColor: colors.gold,
   },
   title: {
     fontSize: 35,
     fontWeight: "700",
-    color: "#B1A172",
+    color: colors.gold,
     textAlign: "center",
   },
 });
