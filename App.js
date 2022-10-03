@@ -11,7 +11,7 @@ export default function App() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [hasWon, setHasWon] = useState(false);
   const [inputNumber, setInputNumber] = useState("");
-  const generateNumber = () => Math.floor(Math.random() * 9 + 1020);
+  const generateNumber = () => Math.floor(Math.random() * 10 + 1020);
   const [myNumber, setMyNumber] = useState();
   
   useEffect(() => {
