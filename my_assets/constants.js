@@ -13,7 +13,7 @@ const gradients = {
   final: { colors: [colors.white, colors.darkGreen], locations: [0.1, 1] },
 };
 
+const MY_NUMBER = 1028;
 
-const MY_NUMBER = 1025;
 
 export { colors, MY_NUMBER, gradients };
