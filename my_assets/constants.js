@@ -13,7 +13,6 @@ const gradients = {
   final: { colors: [colors.white, colors.darkGreen], locations: [0.1, 1] },
 };
 
-const MY_NUMBER = 1028;
 
 
-export { colors, MY_NUMBER, gradients };
+export { colors, gradients };

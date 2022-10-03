@@ -1,7 +1,7 @@
 import { View, Text, Modal, StyleSheet, Button } from "react-native";
 import React from "react";
 import { Card, ButtonSet } from "../components";
-import { colors, MY_NUMBER, gradients } from "../my_assets/constants";
+import { colors, gradients } from "../my_assets/constants";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function GameScreen({
@@ -10,10 +10,11 @@ export default function GameScreen({
   keepGuessing,
   guess,
   hasWon,
+  myNumber
 }) {
   const successMsg = "Congrats! You Won!";
   const failMsg = `You have chosen ${guess} \n That's not my number! \n Guess ${
-    guess < MY_NUMBER ? "higher" : "lower"
+    guess < myNumber ? "higher" : "lower"
   }!`;
   const ModalView = () => (
     <View style={{flex:1}}>

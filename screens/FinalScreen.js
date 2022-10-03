@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 import React from "react";
 import { Card, Header } from "../components";
-import { MY_NUMBER, colors } from "../my_assets/constants";
+import {  colors } from "../my_assets/constants";
 
-export default function FinalScreen({ hasWon, restartGame, isGameOver }) {
+export default function FinalScreen({ hasWon, restartGame, isGameOver, myNumber }) {
   const source = hasWon
-    ? { uri: `https://picsum.photos/id/${MY_NUMBER}/150/150` }
+    ? { uri: `https://picsum.photos/id/${myNumber}/150/150` }
     : require("../my_assets/lose.gif");
 
   const finalImage = <Image source={source} style={styles.image} />;

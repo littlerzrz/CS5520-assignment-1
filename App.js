@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { colors, gradients, MY_NUMBER } from "./my_assets/constants";
+import { colors, gradients } from "./my_assets/constants";
 import { StartScreen, FinalScreen, GameScreen } from "./screens";
 
 export default function App() {
@@ -11,7 +11,9 @@ export default function App() {
   const [isGameOver, setIsGameOver] = useState(true);
   const [hasWon, setHasWon] = useState(true);
   const [inputNumber, setInputNumber] = useState("");
-
+  const generateNumber = () => Math.floor(Math.random() * 11 + 1020);
+  const initialNumber = generateNumber();
+  const [myNumber, setMyNumber] = useState(initialNumber);
   const keepGuessing = () => {
     setIsGameOver(false);
     setModalVisible(false);
@@ -27,11 +29,13 @@ export default function App() {
   const restartGame = () => {
     keepGuessing();
     setHasWon(false);
+    const num = generateNumber();
+    setMyNumber(num);
   };
 
   const makeGuess = (num) => {
     setGuess(num);
-    setHasWon(num == MY_NUMBER);
+    setHasWon(num == myNumber);
     setModalVisible(true);
   };
 
@@ -46,6 +50,7 @@ export default function App() {
             hasWon={hasWon}
             restartGame={restartGame}
             isGameOver={isGameOver}
+            myNumber={myNumber}
           />
         ) : (
           <StartScreen
@@ -62,6 +67,7 @@ export default function App() {
           keepGuessing={keepGuessing}
           guess={guess}
           hasWon={hasWon}
+          myNumber={myNumber}
         />
         <View style={{ flex: 4 }} />
       </LinearGradient>
