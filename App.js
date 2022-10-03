@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -8,12 +8,18 @@ import { StartScreen, FinalScreen, GameScreen } from "./screens";
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   const [guess, setGuess] = useState();
-  const [isGameOver, setIsGameOver] = useState(true);
-  const [hasWon, setHasWon] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [hasWon, setHasWon] = useState(false);
   const [inputNumber, setInputNumber] = useState("");
-  const generateNumber = () => Math.floor(Math.random() * 11 + 1020);
-  const initialNumber = generateNumber();
-  const [myNumber, setMyNumber] = useState(initialNumber);
+  const generateNumber = () => Math.floor(Math.random() * 10 + 1020);
+  const [myNumber, setMyNumber] = useState();
+  
+  useEffect(() => {
+    const num = generateNumber();
+    setMyNumber(num);
+  }, []);
+
+  
   const keepGuessing = () => {
     setIsGameOver(false);
     setModalVisible(false);
